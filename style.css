@@ -1,0 +1,247 @@
+:root {
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: DM Sans;
+}
+
+body {
+    background-color: var(--cream);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Top bar styles */
+
+#topbar {
+    margin: 4em auto 1em;
+
+    background-color: var(--soft-red);
+    width: 92%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    place-content: center;
+    border-radius: 15px;
+}
+
+#topbar > p {
+    color: white;
+}
+
+#topbar > h2 {
+    color: white;
+    font-weight: 400;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top: .2em;
+}
+
+#topbar > img {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: auto;
+    margin-top: -.8em;
+}
+
+/* Body/chart styling */
+
+#body-div {
+    width: 92%;
+    height: 70vh;
+    background-color: white;
+    padding: 1em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#body-div > h2 {
+    font-weight: 400;
+}
+
+#balance-charts {
+    display: flex;
+    height: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px var(--cream) solid;
+    padding: 3em 0px 1.5em;
+    margin-bottom: 2em;
+}
+
+#balance-charts > div {
+    width: 35px;
+}
+
+.chart {
+    background-color: var(--soft-red);
+    border-radius: 5px;
+}
+
+.label {
+text-align: center;
+font-size: 13px;
+}
+
+#monday > .chart {
+    height: 10vh;
+}
+
+#tuesday > .chart {
+    height: 11em;
+}
+
+#wednesday > .chart {
+    height: 16em;
+    background-color: var(--cyan);
+}
+
+#thursday > .chart {
+    height: 9.5em;
+}
+
+#friday > .chart {
+    height: 7.5em;
+}
+
+#saturday > .chart {
+    height: 12.5em;
+}
+
+#sunday > .chart {
+    height: 8em;
+}
+
+#info-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+#b1 > p {
+    margin-bottom: .6em;
+}
+
+#b2 {
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.chart:not(#wednesday > .chart):hover {
+    cursor: pointer;
+    background-color: hsl(10, 80%, 73%);
+}
+
+#wednesday > .chart:hover {
+    cursor: pointer;
+    background-color: hsl(186, 47%, 82%);
+}
+
+.popup {
+    display: none;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 5px;
+    margin-bottom: .4em;
+    margin-left: -6px;
+}
+
+@media screen and (min-width: 1440px) {
+    
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    main {
+        margin: auto;
+        width: 40%;
+    }
+
+    #body-div {
+        padding: 1.5em 2em;
+        height: fit-content;
+    }
+
+    #balance-charts {
+        justify-content: flex-start;
+        gap: 2.2em;
+    }
+
+    .chart {
+        width: 3em;
+    }
+
+    .label {
+        margin-left: .7em;
+    }
+
+    #topbar {
+        margin-top: 17%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
