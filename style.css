@@ -1,222 +1,248 @@
 :root {
-    --orange: hsl(25, 97%, 53%);
-    --white: hsl(0, 0%, 100%);
-    --light-grey: hsl(217, 12%, 63%);
-    --medium-grey: hsl(216, 12%, 54%);
-    --button-grey: hsl(213, 19%, 30%);
-    --dark-blue: hsl(213, 19%, 18%);
-    --very-dark-blue: hsl(216, 12%, 8%);
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
 }
 
-
-
-
-
-
-
-
-
 * {
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    font-family: Overpass;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+    font-family: DM Sans;
 }
 
 body {
-    background-color: var(--very-dark-blue);
+    background-color: var(--cream);
 }
 
-#main-div {
-    background-color: var(--dark-blue);
-    width: 88%;
-    /* height: 50vh; */
-
-    margin-top: 38%;
-    margin-right: auto;
-    margin-left: auto;+
-    padding: 1.1em;
-
-    border-radius: 15px
-}
-
-#star {
-    background-color: var(--button-grey);
-
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-
-}
-
-#star > img {
-    margin-left: 13px;
-    margin-top: 13px;
-}
-
-#main-div > h2 {
-    margin-top: 1em;
-    margin-bottom: .75em;
-
-    color: white;
-    font-size: 1.5em;
-    font-weight: 700;
-}
-
-#main-p {
-    color: var(--light-grey);
-    line-height: 1.5;
-    margin-bottom: 2em;
-}
-
-#rankings {
-    display: flex;
-    justify-content: space-between;
-}
-
-input {
-    appearance: none;
-    background-color: var(--button-grey);
-    color: var(--light-grey);
-
-    text-align: center;
-    padding-top: 15px;
-
-    border-radius: 50%;
-    width: 3.5em;
-    height: 3.5em;
-    transition-duration: 250ms;
-
-}
-
-fieldset {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    border: none;
-}
-
-label {
-    color: white;
-    
-    margin-left: -23%;
-    margin-top: 1.2em;
-}
-
-input:hover {
-    cursor: pointer;
-    background-color: var(--orange);
-    color: white;
-}
-
-#submit {
-    background-color: var(--orange);
-    color: white;
-
-    margin-top: 1.5em;
-
-    text-align: center;
-    padding: 1em;
-    border-radius: 30px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 1em;
-    transition-duration: 250ms;
-}
-
-#submit:hover {
-    cursor: pointer;
-    color: var(--orange);
-    background-color: white;
-}
-
-
-input:checked {
-    background-color: var(--light-grey);
-    color: var(--white);
-}
-
-
-#error {
-    color: white;
-    background-color: red;
-    font-size: 1em;
-
-    margin-top: 3em;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-
-    padding: 8px;
-    border-radius: 10px;
-}
-
-
-
-/* Thank you screen styles */
-
-
-
-#thank-you-state {
-    background-color: var(--dark-blue);
-    width: 90%;
-    margin: auto;
-    margin-top: 40%;
-    padding: 2em 1.2em;
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+
+/* Top bar styles */
+
+#topbar {
+    margin: 4em auto 1em;
+
+    background-color: var(--soft-red);
+    width: min(92%, 500px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    place-content: center;
     border-radius: 15px;
-    transition-duration: 250ms;
-
-    display: none;
 }
 
-#thank-you-state > img {
-    margin-top: 1em;
-}
-
-#rate-selection {
-    background-color: var(--button-grey);
-    color: var(--orange);
-    text-align: center;
-    font-weight: 400;
-    padding: .4em .8em .25em;
-    margin: 1em auto 1.25em;
-    
-    width: fit-content;
-    border-radius: 20px;
-}
-
-#thank-you-state > h2 {
+#topbar > p {
     color: white;
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: .75em;
 }
 
-#thank-you-p {
-    text-align: center;
-    line-height: 1.5;
-    color: var(--light-grey);
+#topbar > h2 {
+    color: white;
+    font-weight: 400;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top: .2em;
 }
 
+#topbar > img {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: auto;
+    margin-top: -.8em;
+}
 
-@media screen and (min-width: 1440px) {
-    #main-div {
-        margin-top: 17%;
-        padding: 2em 2em 1.5em;
-        width: 29%
+/* Body/chart styling */
+
+#body-div {
+    width: min(92%, 500px);
+    height: 60vh;
+    background-color: white;
+    padding: 1em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#body-div > h2 {
+    font-weight: 400;
+}
+
+#balance-charts {
+    display: flex;
+    height: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px var(--cream) solid;
+    padding: 3em 0px 1.5em;
+    margin-bottom: 2em;
+}
+
+#balance-charts > div {
+    width: 100%
+}
+
+.chart {
+    margin: auto;
+    background-color: var(--soft-red);
+    border-radius: 5px;
+    width: min(9vw, 3em);
+}
+
+.label {
+text-align: center;
+font-size: 13px;
+}
+
+#monday > .chart {
+    height: 10vh;
+}
+
+#tuesday > .chart {
+    height: 11em;
+}
+
+#wednesday > .chart {
+    height: 16em;
+    background-color: var(--cyan);
+}
+
+#thursday > .chart {
+    height: 9.5em;
+}
+
+#friday > .chart {
+    height: 7.5em;
+}
+
+#saturday > .chart {
+    height: 12.5em;
+}
+
+#sunday > .chart {
+    height: 8em;
+}
+
+#info-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+#b1 > p {
+    margin-bottom: .6em;
+}
+
+#b2 {
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.chart:not(#wednesday > .chart):hover {
+    cursor: pointer;
+    background-color: hsl(10, 80%, 73%);
+}
+
+#wednesday > .chart:hover {
+    cursor: pointer;
+    background-color: hsl(186, 47%, 82%);
+}
+
+.popup {
+    display: none;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 5px;
+    margin: 0px auto .4em;
+}
+
+/* @media screen and (min-width: 1440px) {
+    
+    * {
+        margin: 0px;
+        padding: 0px;
     }
 
-    #thank-you-state {
-        margin-top: 17%;
-        padding: 2em 2em 1.5em;
-        width: 29%
+    main {
+        margin: auto;
+        width: 40%;
     }
 
+    #body-div {
+        padding: 1.5em 2em;
+        height: fit-content;
+    }
 
-}
+    #balance-charts {
+        justify-content: flex-start;
+        gap: 2.2em;
+    }
+
+    .chart {
+        width: 3em;
+    }
+
+    .label {
+        margin-left: .7em;
+    }
+
+    #topbar {
+        margin-top: 17%;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
